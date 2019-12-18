@@ -1,0 +1,398 @@
+body
+   min-height: 100vh
+   font-family: 'PT Sans', sans-serif
+   overflow-y: scroll
+   background: #1b1920
+
+.page-wrapper
+   background: #111 url(/img/bg-2.jpg) top/cover no-repeat fixed
+   min-height: 100vh
+   overflow: hidden
+
+.adminPage
+   background: #f8f9fa
+
+button
+   background: none
+   border: none
+   padding: 0
+
+*:focus
+   outline: none !important
+   box-shadow: none !important
+
+.no-scroll
+   overflow: hidden !important
+
+.fz-md
+   font-size: 1.5em
+
+.container
+   +min(1200)
+      max-width: 1300px
+
+.logo
+   display: block
+   max-width: 280px
+
+.page-box
+   border-radius: 6px
+   background: #fff
+   box-shadow: 0 0 40px rgba(0, 0, 0, .05)
+
+.box-padding
+   position: relative
+   padding: 30px 20px
+
+   +min(992)
+      padding: 30px
+
+.profile-nav
+   padding: 0 20px
+
+   +min(768)
+      padding: 0 30px
+
+.title-1
+   font-size: 18px
+   text-transform: uppercase
+   font-weight: bold
+   opacity: .7
+   margin-bottom: 1em
+
+   +min(768)
+      font-size: 20px
+
+.title-2
+   font-size: 22px
+   text-transform: uppercase
+   font-weight: bold
+   margin-bottom: 10px
+
+   +min(768)
+      font-size: 30px
+
+.profile-addresses
+   margin-bottom: 30px
+   font-size: 1.2em
+
+.admin-container
+   position: relative
+
+   &.active
+      .admin-nav
+         transform: translateX(0)
+      .admin-main
+         transform: translateX(250px)
+
+.admin-main
+   min-height: 100vh
+   transition: transform .15s
+   padding-top: 15px
+   padding-bottom: 50px
+
+.admin-nav
+   padding: 0 !important
+   width: 250px
+   background: #fff
+   min-height: calc(100vh - 60px)
+   z-index: 99
+   transition: transform .15s
+
+   +max(1200)
+      position: absolute
+      top: 0
+      left: 0
+      transform: translateX(-100%)
+
+.admin-nav-item
+   padding: 1rem 1.8rem
+
+a.admin-nav-item
+   white-space: nowrap
+   display: block
+   width: 100%
+   color: #4a4949
+
+   &:hover
+      background: #f1f6ff
+      color: #4a4949
+      text-decoration: none
+
+   &.active
+      background: #f1f6ff
+      color: $orange
+
+.product-preview
+   max-width: 300px
+   width: 100%
+
+.home-slider
+   position: relative
+
+   &__prev,
+   &__next
+      height: 50px
+      width: 50px
+      position: absolute
+      top: calc(50% - 25px)
+      font-size: 2em
+      transition: background .15s
+
+      &:hover
+         background: rgba(255, 255, 255, .2)
+
+   &__prev
+      left: 15px
+   &__next
+      right: 15px
+
+.product-price
+   font-weight: bold
+   font-size: 1.6em
+
+.product-small
+   font-weight: bold
+   font-size: 1.3em
+   line-height: 1.2
+
+.price-2
+   font-weight: bold
+   font-size: 2em
+   vertical-align: middle
+
+.product-description
+   line-height: 1.4
+   opacity: .7
+   margin-bottom: 15px
+   height: 65px
+   overflow: hidden
+   position: relative
+
+.cart
+   position: fixed
+   top: 0
+   bottom: 0
+   right: 0
+   background: #fff
+   width: 100%
+   z-index: 999
+
+   +min(576)
+      width: 450px
+
+.overlay-cart
+   background: rgba(0, 0, 0, .5)
+   z-index: 888
+   position: fixed
+   top: 0
+   left: 0
+   right: 0
+   bottom: 0
+
+.menu-item
+   padding: 0 1.6rem
+   height: $menu-height
+   line-height: $menu-height
+   background: $red
+   color: #fff
+   border-left: 1px solid #000
+   transition: background .15s
+   text-transform: uppercase
+   font-size: .9em
+   letter-spacing: 1px
+   display: block
+   text-align: center
+
+   &:hover,
+   &.active
+      color: #000
+      text-decoration: none
+      background: #fff
+
+.cart-button
+   padding: 0 1.6rem
+   position: relative
+   background: #ffb300
+   height: $menu-height
+   border-left: 1px solid #000
+   font-weight: bold
+   width: 100%
+
+   .fa
+      position: relative
+
+      span
+         position: absolute
+         top: -7px
+         left: -6px
+         width: 16px
+         height: 16px
+         line-height: 16px
+         font-size: 12px
+         font-weight: bold
+         color: #fff
+         background: #ff0018
+         text-align: center
+         border-radius: 50%
+         font-family: Roboto, sans-serif
+
+.cart-items
+   height: calc(100% - (79px + 138px))
+   overflow: auto
+
+.cart-item
+
+   &:not(:last-child)
+      border-bottom: 1px solid rgba(0, 0, 0, .1)
+      margin-bottom: 20px
+      padding-bottom: 20px
+
+.cart-title
+   font-size: 18px
+   text-transform: uppercase
+   font-weight: bold
+   opacity: .7
+   border-bottom: 1px solid rgba(0, 0, 0, .15)
+
+   +min(768)
+      font-size: 20px
+
+.cart-total
+   border-top: 1px solid rgba(0, 0, 0, .15)
+
+.close.close-cart
+   z-index: 3
+   position: absolute
+   top: 0
+   right: 0
+   padding: 22px 30px 0
+   font-size: 2rem
+
+.cart-item-qty
+   margin: 5px 0
+   user-select: none
+
+   span
+      display: inline-block
+      font-weight: bold
+      padding: 0 10px
+
+.product-image
+   padding: 1.25rem 1.25rem 0
+
+   +min(1200)
+      padding: 2rem 2rem 0
+
+   img
+      width: 100%
+
+.vodal-mask
+   background: rgba(0, 0, 0, .5)
+
+.page-link
+   color: #fff
+   background-color: #dc3545
+   border: 1px solid rgba(255, 255, 255, 0.15) !important
+   transition: background-color .15s
+
+   &:hover
+      background: #000
+      color: #fff
+
+.page-item.active .page-link
+   background: #000
+   color: #fff
+
+.page-title
+   font-weight: bold
+   text-align: center
+   color: #fff
+   padding: 1em 0
+   font-size: 2rem
+
+   +min(1200)
+      font-size: 2.5rem
+
+.catalog-spinner
+   margin: 15% auto 40%
+   display: block
+
+.overlay-spinner
+   +scut-fill
+   background: rgba(0, 0, 0, .1)
+   z-index: 999
+   display: flex
+
+   .lds-dual-ring
+      margin: auto
+
+#cooking-loader
+   @extend .overlay-spinner
+   position: fixed
+   background: #1b1920
+
+label,
+input[type="radio"]
+   cursor: pointer
+
+.dd-hover
+   position: relative
+   user-select: none
+
+   &.active
+      .dd-hover__value
+         .fa-caret-down
+            transform: rotate(-180deg)
+
+      .dd-hover__content
+         visibility: visible
+         opacity: 1
+         transform: scale(1)
+
+   &__value
+      display: inline-block
+      cursor: pointer
+
+      .fa-caret-down
+         transition: transform .15s
+
+   &__content
+      position: absolute
+      top: calc(100% + 5px)
+      right: -5px
+      background: #fff
+      transition: all .2s
+      z-index: 99
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.05)
+      border-radius: 3px
+      opacity: 0
+      visibility: hidden
+      transform: scale(0.3)
+      transform-origin: 90% 0
+
+      &:before
+         content: ''
+         position: absolute
+         top: -5px
+         right: 20px
+         width: 0
+         height: 0
+         border-style: solid
+         border-width: 0 5px 5px 5px
+         border-color: transparent transparent #ffffff transparent
+
+   &__item
+      display: block
+      width: 100%
+      padding: 12px 25px
+      white-space: nowrap
+      color: #000
+      transition: all .25s
+      text-align: left
+
+      &:hover
+         text-decoration: none
+         color: #000
+         background: rgba(0, 0, 0, .1)
+
