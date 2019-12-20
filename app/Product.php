@@ -68,10 +68,10 @@ class Product extends Model implements HasMedia
         return 0;
     }
 
-    public function getBodyAttribute($body)
+    public function getBodyAttribute()
     {
-        if ($body) {
-            return $body;
+        if ($this->attributes['body']) {
+            return $this->attributes['body'];
         }
         return '';
     }
