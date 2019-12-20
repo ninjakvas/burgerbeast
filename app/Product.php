@@ -13,7 +13,7 @@ class Product extends Model implements HasMedia
 
     protected $guarded = [];
     protected $hidden = ['media'];
-    protected $appends = ['image', 'thumbnail', 'tag', 'body'];
+    protected $appends = ['image', 'thumbnail', 'tag'];
     protected $casts = ['price' => 'integer'];
 
     public function orders()
@@ -66,13 +66,5 @@ class Product extends Model implements HasMedia
             return $firstTag->id;
         }
         return 0;
-    }
-
-    public function getBodyAttribute()
-    {
-        if ($this->attributes['body']) {
-            return $this->attributes['body'];
-        }
-        return '';
     }
 }

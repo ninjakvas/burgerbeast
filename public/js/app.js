@@ -3635,6 +3635,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       tags: [],
+      body: '',
       image: null,
       // ckeditor
       editor: _ckeditor_ckeditor5_build_classic__WEBPACK_IMPORTED_MODULE_0___default.a,
@@ -3648,6 +3649,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       _api__WEBPACK_IMPORTED_MODULE_3__["api"].get('tags?all=1').then(function (resp) {
         _this.tags = resp.data;
       });
+
+      if (_this.product.body) {
+        _this.body = _this.product.body;
+      }
     })["catch"](function () {
       return _this.$router.push('/admin/products');
     });
@@ -3703,9 +3708,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         data.append('image', this.image);
       }
 
-      if (this.product.body) {
-        data.append('body', this.product.body);
-      }
+      data.append('body', this.body);
 
       if (this.product.price) {
         data.append('price', this.product.price);
@@ -64303,11 +64306,11 @@ var render = function() {
                 _c("ckeditor", {
                   attrs: { editor: _vm.editor, config: _vm.editorConfig },
                   model: {
-                    value: _vm.product.body,
+                    value: _vm.body,
                     callback: function($$v) {
-                      _vm.$set(_vm.product, "body", $$v)
+                      _vm.body = $$v
                     },
-                    expression: "product.body"
+                    expression: "body"
                   }
                 })
               ],

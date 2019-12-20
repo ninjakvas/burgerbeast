@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label class="form-label">Описание товара</label>
-                        <ckeditor :editor="editor" v-model="product.body" :config="editorConfig"></ckeditor>
+                        <ckeditor :editor="editor" v-model="body" :config="editorConfig"></ckeditor>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3">
@@ -72,6 +72,7 @@
         data() {
             return {
                 tags: [],
+                body: '',
                 image: null,
                 // ckeditor
                 editor: ClassicEditor,
@@ -85,6 +86,9 @@
                         .then(resp => {
                             this.tags = resp.data
                         })
+                    if (this.product.body) {
+                        this.body = this.product.body
+                    }
                 })
                 .catch(() => this.$router.push('/admin/products'))
         },
@@ -131,9 +135,7 @@
                 if (this.image) {
                     data.append('image', this.image)
                 }
-                if (this.product.body) {
-                    data.append('body', this.product.body)
-                }
+                data.append('body', this.body)
                 if (this.product.price) {
                     data.append('price', this.product.price)
                 }
