@@ -18,6 +18,7 @@ class CreateTagsTable extends Migration
             $table->boolean('nav')->default(0);
             $table->string('name');
             $table->string('slug');
+            $table->timestamps();
         });
     }
 

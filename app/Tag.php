@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-    public $timestamps = false;
     public $guarded = [];
     public $casts = ['nav' => 'boolean'];
 
