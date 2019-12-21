@@ -5,7 +5,7 @@
             <p class="text-danger" v-if="errors.message">{{errors.message}}</p>
             <div class="form-group">
                 <label class="form-label"><i class="fa fa-phone mr-2"></i>Ваш телефон</label>
-                <imask v-model="phone" :mask="mask" :lazy="true" autofocus type="text"
+                <imask v-model="phone" :unmask="true" :mask="mask" :lazy="true" autofocus type="text"
                        :class="{'is-invalid': errors.phone}"
                        class="form-control form-control-lg"/>
                 <div class="invalid-feedback" v-if="errors.phone">{{errors.phone[0]}}</div>
