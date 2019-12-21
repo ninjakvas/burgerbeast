@@ -25,7 +25,7 @@ $factory->define(User::class, function (Faker $faker) {
 //        'email' => $faker->email,
         'name' => 'admin',
         'is_admin' => 1,
-        'phone' => '+380636254430',
+        'phone' => '+380999999999',
         'email' => 'dd@dd.net',
         'email_verified_at' => now(),
         'password' => bcrypt('password'),
