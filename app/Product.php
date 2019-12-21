@@ -34,7 +34,8 @@ class Product extends Model implements HasMedia
     {
         $this->addMediaConversion('thumb')
             ->crop('crop-center', 100, 70)
-            ->keepOriginalImageFormat();
+            ->keepOriginalImageFormat()
+            ->nonQueued();
 
         $this->addMediaConversion('450x300')
             ->crop('crop-center', 450, 300)
