@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class SendPassword extends Notification
+class SendPassword extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -43,7 +43,8 @@ class SendPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line("Ваш новый пароль $this->password");
+            ->subject('Ваш новый пароль на сайте ' .  config('app.name'))
+            ->view('emails.password', ['password' => $this->password]);
     }
 
     /**

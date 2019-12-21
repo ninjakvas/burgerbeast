@@ -4184,6 +4184,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -65211,6 +65212,12 @@ var render = function() {
                               }
                             }
                           }),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "form-text text-muted" }, [
+                            _vm._v(
+                              "На ваш email будет отправлен пароль для входа в личный кабинет"
+                            )
+                          ]),
                           _vm._v(" "),
                           _vm.errors.email
                             ? _c("div", { staticClass: "invalid-feedback" }, [

@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->notifications()->get();
     }
+
+    public function routeNotificationForMail()
+    {
+        return $this->email;
+    }
 }
