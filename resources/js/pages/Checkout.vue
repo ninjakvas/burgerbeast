@@ -115,7 +115,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label class="form-label">Телефон:</label>
-                                <imask v-model="phone" :mask="mask" :lazy="true" type="text"
+                                <imask v-model="phone" :unmask="true" :mask="mask" :lazy="true" type="text"
                                        :class="{'is-invalid': errors.phone}"
                                        class="form-control form-control-lg"/>
                                 <div class="invalid-feedback" v-if="errors.phone">{{errors.phone[0]}}</div>
@@ -179,7 +179,7 @@
     export default {
         data() {
             return {
-                mask: '+380000000000',
+                mask: '{+38} ({\\0}00) 000 00 00',
                 name: '',
                 phone: '',
                 selectedAddress: 0,

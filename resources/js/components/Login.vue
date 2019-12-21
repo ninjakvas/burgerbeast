@@ -35,7 +35,7 @@
     export default {
         data() {
             return {
-                mask: '+380000000000',
+                mask: '{+38} ({\\0}00) 000 00 00',
                 phone: '',
                 password: ''
             }
