@@ -138,7 +138,7 @@
                                        v-model="email"
                                        :class="{'is-invalid': errors.email}"
                                        class="form-control form-control-lg" autocomplete="off">
-                                <small class="form-text text-muted">На ваш email будет отправлен пароль для входа в личный кабинет</small>
+                                <small class="form-text text-muted">На ваш Email будет отправлен пароль для входа в личный кабинет</small>
                                 <div class="invalid-feedback" v-if="errors.email">{{errors.email[0]}}</div>
                             </div>
                         </div>
