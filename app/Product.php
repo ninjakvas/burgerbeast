@@ -39,7 +39,8 @@ class Product extends Model implements HasMedia
 
         $this->addMediaConversion('450x300')
             ->crop('crop-center', 450, 300)
-            ->keepOriginalImageFormat();
+            ->keepOriginalImageFormat()
+            ->nonQueued();
     }
 
     public function getImageAttribute()
