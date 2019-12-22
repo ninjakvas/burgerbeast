@@ -13,7 +13,7 @@
                 <div class="product-description" v-html="product.body"></div>
                 <div class="product-price text-danger mb-3">{{product.price | price}}</div>
                 <button class="btn btn-danger w-100 btn-lg" @click="$emit('addToCart', product)">
-                    <i class="fa fa-shopping-cart mr-2"></i>Заказать
+                    <i class="fa fa-shopping-cart mr-2"></i> В корзину
                 </button>
             </div>
         </div>

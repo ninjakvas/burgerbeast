@@ -12,7 +12,7 @@
                     <hr class="my-4">
                     <span class="price-2 mr-4">{{product.price | price}}</span>
                     <button class="btn btn-danger btn-lg px-4" @click="addToCart(product)">
-                        <i class="fa fa-shopping-basket mr-2"></i>Заказать
+                        <i class="fa fa-shopping-basket mr-2"></i>В корзину
                     </button>
                 </div>
             </div>
