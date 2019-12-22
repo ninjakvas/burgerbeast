@@ -8,6 +8,7 @@ class Tag extends Model
 {
     public $guarded = [];
     public $casts = ['nav' => 'boolean'];
+    protected $attributes = ['nav' => 0];
 
     public function products()
     {

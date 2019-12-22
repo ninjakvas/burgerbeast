@@ -55,7 +55,6 @@ class OrderController extends Controller
                 'address' => ['required'],
             ]);
             $address = $user->addresses()->firstOrCreate($request->only(['address']));
-            $user = User::find($user->id);
         } else {
             $request->validate([
                 'name' => ['required', 'string'],
@@ -71,9 +70,7 @@ class OrderController extends Controller
                 'password' => bcrypt($password)
             ]);
             $user->notify(new SendPassword($password));
-
             $address = $user->addresses()->create($request->only(['address']));
-            $user = User::find($user->id);
         }
 
         // create user order
@@ -100,7 +97,7 @@ class OrderController extends Controller
         if (!auth('api')->user()) {
             $user->token = $user->createToken('access_token')->accessToken;
         }
-        return $user;
+        return $user->load('addresses');
     }
 
     /**

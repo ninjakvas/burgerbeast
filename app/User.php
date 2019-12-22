@@ -48,6 +48,7 @@ class User extends Authenticatable
 
     protected $with = ['addresses'];
     protected $appends = ['notifications'];
+    protected $attributes = ['is_admin' => 0, 'sex' => 'male'];
 
     public function addresses()
     {

@@ -83,11 +83,16 @@ class TagController extends Controller
     {
         $name = $request->name;
         $tag = Tag::find($id);
-        $tag->update([
-            'name' => $name,
-            'nav' => $request->nav,
-            'slug' => Str::slug($name)
-        ]);
+
+        if ($name) {
+            $tag->name = $name;
+            $tag->slug = Str::slug($name);
+        }
+        if ($request->nav) {
+            $tag->nav = $request->nav;
+        }
+        $tag->save();
+
         return $tag;
     }
 

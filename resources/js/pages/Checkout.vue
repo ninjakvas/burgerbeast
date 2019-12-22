@@ -286,7 +286,9 @@
                 this.address = this.user.addresses[this.selectedAddress].address
             },
             isAuth() {
-                this.address = this.user.addresses[0].address
+                if (this.user.addresses.length) {
+                    this.address = this.user.addresses[0].address
+                }
             },
         },
         components: {
