@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div v-if="isLoading" class="overlay-spinner">
+            <div class="lds-dual-ring"></div>
+        </div>
         <h2 class="title-1">Создать новый товар:</h2>
         <form @submit.prevent="onSubmit">
             <div class="row">
@@ -89,7 +92,8 @@
         },
         computed: {
             ...mapState({
-                errors: state => state.admin.errors
+                errors: state => state.admin.errors,
+                isLoading: state => state.cart.isLoading
             })
         },
         methods: {
