@@ -18,6 +18,7 @@ import Product from '@/pages/Product.vue'
 import Checkout from '@/pages/Checkout.vue'
 import PageNotFound from '@/pages/PageNotFound.vue'
 import Tags from '@/pages/Tags.vue'
+import About from '@/pages/About.vue'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home,
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: About
         },
         {
             path: '/profile',

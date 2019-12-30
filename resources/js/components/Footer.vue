@@ -8,7 +8,7 @@
                         <a href="#" class="mb-1">Главная</a>
                         <a href="#" class="mb-1">Меню</a>
                         <a href="#" class="mb-1">Доставка</a>
-                        <a href="#" class="mb-1">Клиентам</a>
+                        <router-link to="/about">О нас</router-link>
                     </div>
                 </div>
                 <div class="col-md-3">
